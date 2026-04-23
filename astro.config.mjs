@@ -5,6 +5,8 @@ import catppuccin from "@catppuccin/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://coderscreative.github.io",
+  base: "/calibre-docs",
   integrations: [
     starlight({
       plugins: [
