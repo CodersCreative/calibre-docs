@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="490"
+   height="180"
+   viewBox="0 0 129.64583 47.625001"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="calibre.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.5839192"
+     inkscape:cx="150.57586"
+     inkscape:cy="102.90929"
+     inkscape:window-width="1920"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2.910415,-43.920833)">
+    <path
+       style="fill:#89b4fa;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="m 2.910415,43.920833 v 47.625 H 8.2020817 V 88.9 H 18.785415 v 2.645833 h 44.979167 c 0,0 4.305623,-0.937955 5.291667,-2.645833 0.999022,-1.730358 3.319579,-2.645833 5.291666,-2.645833 20.050686,0 58.208335,-18.520834 58.208335,-18.520834 0,0 -38.162869,-18.520833 -58.208335,-18.520833 -1.972087,0 -4.284261,-0.900956 -5.291666,-2.645833 -0.986044,-1.707879 -5.291667,-2.645834 -5.291667,-2.645834 H 18.785415 v 2.645834 H 8.2020817 v -2.645834 z"
+       id="path3"
+       sodipodi:nodetypes="cccccccsscsscccccc" />
+    <path
+       id="rect3"
+       style="fill:#1e1e2e;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
+       d="m 7.1495037,43.432646 4.6114293,47.401217 5.266802,-0.512382 -0.256191,-2.6334 10.533604,-1.024763 0.256191,2.633401 41.921479,-4.078333 2.5e-5,-47.359713 c -0.986446,-0.226702 -1.765118,-0.318409 -1.765118,-0.318409 l -44.767816,4.355239 0.256191,2.633401 -10.533604,1.024762 -0.25619,-2.633401 z"
+       transform="rotate(5.5565367)" />
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:33.1611px;font-family:Poppins;-inkscape-font-specification:'Poppins, Medium';text-align:center;letter-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:middle;fill:#cccccc;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       x="67.650414"
+       y="80.881729"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:33.1611px;font-family:Poppins;-inkscape-font-specification:'Poppins Bold';letter-spacing:0px;stroke-width:0;stroke-dasharray:none"
+         x="67.650414"
+         y="80.881729"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Poppins;-inkscape-font-specification:'Poppins Bold';letter-spacing:0px;fill:#89b4fa;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+           id="tspan2"
+           dy="0">Cal</tspan><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Poppins;-inkscape-font-specification:'Poppins Bold';letter-spacing:0px;fill:#1e1e2e;fill-opacity:1;stroke-width:0;stroke-dasharray:none"
+           id="tspan3">ibre</tspan></tspan></text>
+    <g
+       id="text43"
+       style="font-weight:500;font-size:33.1611px;font-family:Poppins;-inkscape-font-specification:'Poppins, Medium';text-align:center;letter-spacing:0px;text-anchor:middle;fill:#cccccc;stroke:#000000;stroke-width:0;stroke-linecap:round;stroke-linejoin:round"
+       aria-label="Calibre">
+      <path
+         id="path45"
+         style="font-weight:bold;-inkscape-font-specification:'Poppins Bold';fill:#89b4fa;fill-opacity:1"
+         d="m 128.82108,69.479997 c -2.01473,0.921241 -4.74889,2.143175 -7.96437,3.509346 h 8.00933 c 0.0663,-0.574792 0.0992,-1.127202 0.0992,-1.65778 0,-0.645192 -0.0481,-1.262414 -0.14417,-1.851566 z m -6.3221,5.266862 c -0.55268,1.193799 -1.53636,1.790588 -2.95124,1.790588 -0.95062,0 -1.75782,-0.298136 -2.42104,-0.895036 -0.24895,-0.24037 -0.45605,-0.520916 -0.62167,-0.841292 -1.56016,0.636053 -3.19269,1.287042 -4.87722,1.939416 0.79282,1.402922 1.88551,2.484652 3.27732,3.245797 1.41487,0.77376 3.02876,1.160653 4.84157,1.160653 1.5033,0 2.86291,-0.276205 4.07882,-0.82889 1.2159,-0.552685 2.22152,-1.315507 3.01738,-2.288233 0.81798,-0.972726 1.38187,-2.067097 1.69137,-3.283003 z m -19.49855,5.160925 c -0.95748,0.330785 -1.92081,0.656304 -2.88664,0.974101 h 2.88664 z"
+         sodipodi:nodetypes="cccsccscccsssccccccc" />
+    </g>
+  </g>
+</svg>
