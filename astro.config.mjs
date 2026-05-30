@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import catppuccin from "@catppuccin/starlight";
+import starlightVersions from "starlight-versions";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,9 @@ export default defineConfig({
         catppuccin({
           dark: { flavor: "mocha", accent: "blue" },
           light: { flavor: "latte", accent: "blue" },
+        }),
+        starlightVersions({
+          versions: [{ slug: "v0" }],
         }),
       ],
       title: "Calibre",
@@ -41,11 +45,11 @@ export default defineConfig({
       sidebar: [
         {
           label: "Language Tour",
-          autogenerate: { directory: "tour" },
+          items: [{ autogenerate: { directory: "tour" } }],
         },
         {
           label: "Reference",
-          autogenerate: { directory: "reference" },
+          items: [{ autogenerate: { directory: "reference" } }],
         },
       ],
     }),

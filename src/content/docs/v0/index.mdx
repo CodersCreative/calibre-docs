@@ -1,0 +1,75 @@
+---
+title: Welcome to Calibre
+description: Get started building your next project in style.
+template: splash
+hero:
+  tagline: Get started building your next project in style.
+  image:
+    file: ../../../assets/v0/calibreart_light.svg
+  actions:
+    - text: Try Calibre
+      link: /calibre-docs/v0/tour/01/
+      icon: right-arrow
+slug: v0
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+```cal
+const main := fn => {
+	let name, age := "Ty", "10";
+	
+	let txt := fmt"Hello, my name is {name} and I'm {age} years old!";
+	print(txt);
+	
+	match age {
+		"10" => print("match with value : 10"),
+		"Hi" => print("Hi")
+	};
+	
+	=> {
+		defer print("end of scope");
+		defer return print("end of func");
+	};
+	
+	let mut bmi_ch : Channel:<float> = Channel.new();
+	let mut fac_ch := Channel:<int>.new();
+	
+	spawn@ {
+		=> bmi_ch.send(bmi(52.5, 1.65)),
+		=> fac_ch.send(factorial(5))
+	};
+	
+	print(try match bmi_ch.get() => 0f);
+	print(try match fac_ch.get() => 0);
+		
+	null;
+};
+
+const bmi := fn (mass height : float) -> float => mass / height ** 2;
+const factorial := fn (x : int) -> int => if x <= 1 => 1 else => x * factorial(x - 1);
+```
+
+## Why Calibre?
+
+<CardGrid stagger>
+  <Card title="Concurrency" icon="rocket">
+    Calibre is concurrency first and comes with an easy to use `spawn` keyword
+    to create new workers whenever needed easily.
+  </Card>
+
+  <Card title="Easier FFI Interop" icon="external">
+    Calibre allows you to easily import and use types and functions from other languages
+    with its easy to understand `extern` keyword.
+  </Card>
+
+  <Card title="Control" icon="pencil">
+    Although calibre is interpreted it gives you the control to use raw pointers `ptr:<T>` and
+    allows you to be explicit with mutability and references leaving room for no confusion.
+  </Card>
+
+  <Card title="Constantly Evolving" icon="star">
+    Calibre is a statically typed language implemented in Rust with a working stackless bytecode VM, formatter, and LSP.
+    The project is actively evolving, but it already supports a broad set of language features and a usable workflow.
+  </Card>
+</CardGrid>

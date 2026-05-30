@@ -1,0 +1,24 @@
+{
+  "sidebar": [
+    {
+      "label": "Language Tour",
+      "items": [
+        {
+          "autogenerate": {
+            "directory": "tour"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Reference",
+      "items": [
+        {
+          "autogenerate": {
+            "directory": "reference"
+          }
+        }
+      ]
+    }
+  ]
+}
