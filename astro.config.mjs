@@ -26,8 +26,8 @@ export default defineConfig({
         "./src/styles/custom.css",
       ],
       logo: {
-        light: "./src/assets/calibre.svg",
-        dark: "./src/assets/calibrelight.svg",
+        light: "./src/assets/calibre.png",
+        dark: "./src/assets/calibrelight.png",
         replacesTitle: true,
       },
       social: [
