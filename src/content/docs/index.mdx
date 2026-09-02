@@ -35,8 +35,10 @@ const main := fn => {
 	let mut fac_ch := Channel:<int>.new();
 	
 	spawn@ {
+		// Using an explicit send call
 		=> bmi_ch.send(bmi(52.5, 1.65)),
-		=> fac_ch.send(factorial(5))
+		// Using the emit syntax
+		=> emit fac_ch factorial(5)
 	};
 	
 	print(try match bmi_ch.get() => 0f);
