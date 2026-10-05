@@ -15,7 +15,7 @@ let classify := fn match int -> str {
 };
 ```
 
-An ordinary function and a `fn match` function can often express the same idea however
+An ordinary function and a `fn match` function can express the same idea however
 the `fn match` form is usually shorter and keeps the focus on the patterns themselves.
 
 ```cal
@@ -105,12 +105,12 @@ match 50 {
 Tuples can be matched position by position.
 
 ```cal
-match 10, 90, 20 {
-  10, mut value, 20 => {
+match (10, 90, 20) {
+  (10, mut value, 20) => {
     value += 90;
     print(value);
   },
-  10, const value, _ => print(value),
+  (10, const value, _) => print(value),
   _ => {}
 };
 ```
@@ -118,8 +118,8 @@ match 10, 90, 20 {
 The `..` pattern can ignore large parts of a tuple or list unlike `_` which only ignores a single value.
 
 ```cal
-match 10, 90, 20 {
-  10, .., 20 => print("matched"),
+match (10, 90, 20) {
+  (10, .., 20) => print("matched"),
   _ => {}
 };
 ```

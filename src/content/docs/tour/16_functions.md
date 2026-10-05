@@ -23,12 +23,12 @@ let double := fn (x : int) -> int => return x * 2;
 print(double(10));
 ```
 
-Function types are written with `fn (...) -> ...` ot `fn -> ...`.
+Function types are written with `fn (...) -> ...` or `fn -> ...`.
 
 ```cal
 const add : fn (int, int) -> int = fn (a b : int) -> int => return a + b;
 
-// Note that the parameters brackets aren't required if there are no parameters
+// Note that the parameter brackets aren't required if there are no parameters
 const add_2_5 : fn -> int = fn => return add(2, 5);
 ```
 
@@ -42,7 +42,7 @@ print((fn (x : int) -> int => return x + 1)(9));
 Because functions are values, they work naturally with other features like list operations and generators.
 
 ```cal
-let mapped := list:<int>[1, 2, 3].into_iter().map(fn (x : int) -> int => return x * 10).collect();
+let mapped := list:<int>[1, 2, 3] as! gen:<int>.map(fn (x : int) -> int => return x * 10).collect();
 print(mapped);
 ```
 

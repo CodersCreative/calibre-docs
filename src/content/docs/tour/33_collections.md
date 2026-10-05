@@ -7,8 +7,6 @@ The stdlib provides hash-based collection types:
 
 - `HashMap:<K, V>`
 - `HashSet:<T>`
-- `HashMapIter:<K, V>`
-- `HashSetIter:<T>`
 
 `HashMap:<K, V>` stores key-value pairs.
 
@@ -17,7 +15,9 @@ let mut map := HashMap:<str, int>.new();
 map["a"] := 10;
 map["b"] := 20;
 
+// Note that indexing returns an optional
 print(map["a"]);
+
 print("a" in map);
 print(map.len());
 ```
@@ -36,8 +36,6 @@ Important `HashMap` methods include:
 - `.clear()`
 - `.set_all(...)`
 - `.get_or(...)`
-- `.iter()`
-- `.into_iter()`
 
 `HashSet:<T>` stores unique values.
 
@@ -60,14 +58,5 @@ Important `HashSet` methods include:
 - `.is_empty()`
 - `.values()`
 - `.clear()`
-- `.iter()`
-- `.into_iter()`
-
-The iterator types `HashMapIter` and `HashSetIter` implement the iterator trait, so you can call `.next()` manually or use the usual iterator helpers.
-
-```cal
-let mut it := map.into_iter();
-print(it.next());
-```
 
 Use `HashMap` when values are looked up by key, and `HashSet` when you only care whether a value is present.

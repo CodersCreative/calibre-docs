@@ -65,15 +65,3 @@ impl CountryBase {
   const clone_language := fn (self : &Self) -> Language => return self.language;
 };
 ```
-
-Calibre also uses `impl` together with traits:
-
-```cal
-impl Person for User {
-  const name := fn (self : &User) -> str => return self.name;
-};
-```
-
-That trait-specific form is covered in the next section on traits.
-
-Use `impl TypeName { ... }` when you want methods or associated items that belong directly to a type, and `impl TraitName for TypeName { ... }` when you are implementing a trait.

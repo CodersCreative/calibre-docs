@@ -13,8 +13,8 @@ let newline : char = '\n';
 Characters often appear when iterating through strings or converting strings to character lists.
 
 ```cal
-let chars : list:<char> = "hello".to_chars();
-print(chars[0]);
+let chars : char = try!! "hello"[0];
+print(char);
 ```
 
 The stdlib provides helper methods on `char`, including:

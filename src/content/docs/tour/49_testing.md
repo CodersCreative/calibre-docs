@@ -3,6 +3,8 @@ title: Tests and Benchmarks
 description: Using `test`, `bench`, and `assert`.
 ---
 
+// TODO Talk about testing related tags
+
 Calibre has built-in forms for tests and benchmarks.
 
 A test is declared with `test`.

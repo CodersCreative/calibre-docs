@@ -20,13 +20,16 @@ print(r.sum());
 
 Ranges can also be turned into iterators with `.into_iter()`.
 
-The stdlib defines several iterator types:
+The stdlib defines a generator type `gen:<T>` which can be converted to 
+by most collections in the language:
 
-- `ListIter:<T>` for lists
-- `RangeIter` for ranges
-- `StrIter` for strings
+- `gen:<T>` for list
+- `gen:<int>` for range
+- `gen:<char>` for str
+- `gen:<<K, V>>` for HashMap
+- `gen:<T>` for HashSet
 
-These types implement the stdlib `Iter` trait, which provides iterator-style methods such as:
+These types implement an "as" overide for conversion to a generator which provides iterator-style methods such as:
 
 - `.collect()`
 - `.map(...)`
@@ -46,27 +49,20 @@ These types implement the stdlib `Iter` trait, which provides iterator-style met
 For example:
 
 ```cal
-let mapped := list:<int>[1, 2, 3].into_iter().map(fn (x : int) -> int => return x * 10).collect();
-let filtered := list:<int>[1, 2, 3, 4].into_iter().filter(fn (x : int) -> bool => return x % 2 = 0).collect();
-let folded := list:<int>[1, 2, 3, 4].into_iter().fold(0, fn (acc : int, x : int) -> int => return acc + x);
+let mapped := list:<int>[1, 2, 3] as! gen:<int>.map(fn (x : int) -> int => return x * 10).collect();
+let filtered := list:<int>[1, 2, 3, 4] as! gen:<int>.filter(fn (x : int) -> bool => return x % 2 = 0).collect();
+let folded := list:<int>[1, 2, 3, 4] as! gen:<int>.fold(0, fn (acc : int, x : int) -> int => return acc + x);
 ```
 
 You can also work with iterator values manually through `.next()`.
 
 ```cal
-let mut it : RangeIter = (0..3).into_iter();
+let mut it := (0..3) as! gen:<int>;
 
 print(it.next());
 print(it.next());
 print(it.next());
 
-let mut it : RangeIter = (0..3).into_iter();
+let mut it : gen:<int> = (0..3) as! gen:<int>;
 for let .Some : x => it.next() => print(x);
-```
-
-String iteration uses `StrIter` and yields `char` values.
-
-```cal
-let mut chars : StrIter = "abc".into_iter();
-print(chars.next());
 ```

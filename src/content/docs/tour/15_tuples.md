@@ -21,7 +21,7 @@ let point := tuple(5, 6);
 Tuples can be destructured directly.
 
 ```cal
-let mut first, mut second := tuple(1, 2);
+let (mut first, mut second) := tuple(1, 2);
 print(first + second);
 ```
 
@@ -29,7 +29,7 @@ You can also destructure only part of a larger tuple with `..`.
 
 ```cal
 let values := 10, 20, 30, 40;
-let start, .., end := values;
+let (start, .., end) := values;
 
 print(start + end);
 ```
@@ -40,7 +40,7 @@ Tuple destructuring works in assignments too.
 let mut x := 0;
 let mut y := 0;
 
-x, y := tuple(5, 6);
+(x, y) := tuple(5, 6);
 print(x + y);
 ```
 
@@ -54,9 +54,9 @@ print(sum_pair((7, 8)));
 Tuples also work naturally in pattern matching.
 
 ```cal
-match 10, 90, 20 {
-  10, mut value, 20 => print(value),
-  10, .., 20 => print("matched"),
+match (10, 90, 20) {
+  (10, mut value, 20) => print(value),
+  (10, .., 20) => print("matched"),
   _ => {}
 };
 ```

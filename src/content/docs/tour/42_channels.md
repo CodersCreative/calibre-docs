@@ -35,7 +35,7 @@ Channels are especially useful with spawned workers.
 ```cal
 const worker := fn (jobs : &Channel:<int>, results : &mut Channel:<int>) => {
   if let .Some : job <- jobs.get() => {
-    emit results job * 2;
+    emit results <- job * 2;
   };
 };
 ```
@@ -46,15 +46,11 @@ The stdlib provides these important channel operations:
 - `.send(...)`
 - `.get()`
 - `.try_get()`
-- `.try_send(...)`
 - `.close()`
 - `.closed()`
-- `.recv()`
-- `.try_recv()`
-- `.recv_or(...)`
 - `.send_all(...)`
 
-`emit ch value` gets automatically converted to `ch.send(value)`. 
+`emit ch <- value` gets automatically converted to `ch.send(value)`. 
 
 Closing a channel marks it as done.
 

@@ -1,7 +1,9 @@
 ---
 title: Builtin Operators
-description: Core operators like `in`, `?:`, `**`, and logical operators.
+description: Core operators like `in`, ternary, `**`, and logical operators.
 ---
+
+// TODO Expand on ternarys
 
 Calibre has several built-in operators that show up throughout the language.
 
@@ -21,12 +23,12 @@ let classify := fn match int -> str {
 };
 ```
 
-The ternary operator has the form `condition ? when_true : when_false`.
+The ternary operators have the form `when_true if condition else when_false`.
 
 This is useful for short conditional expressions.
 
 ```cal
-let label := (10 > 5) ? "yes" : "no";
+let label := "yes" if 10 > 5 else "no";
 print(label);
 ```
 

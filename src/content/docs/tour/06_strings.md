@@ -32,34 +32,38 @@ print(text.replace("b", "B"));
 print(text.starts_with("a"));
 ```
 
-If you need to work with characters directly, you can convert a string into a list of chars.
+If you need to work with characters directly, you can index into a string or convert it to a `list:<char>`.
 
 ```cal
-let chars : list:<char> = "hello".to_chars();
+let chars : list:<char> = "hello" as! list:<char>;
 
-// String Iters are iter:<char> not iter:<str> so this code is perfectly valid
-let chars : list:<char> = "hello".into_iter().collect();
+// The generator associated with str is gen:<char> not gen:<str> so this code is perfectly valid
+let chars : list:<char> = "hello" as! gen:<char>.collect();
 ```
 
 Calibre also supports template-style function calls for building strings.
 
 ```cal
+// Note that your inputs will all be `as!` converted to T in list:<T>
+// allowing you to only accept certain types in your template functions
 const custom_fmt := fn (splits : list:<str>, inputs : list:<str>) -> str => {
   let mut txt : str = "";
 
   for i in len(splits) => {
-    txt &= splits[i];
-    if i < len(inputs) => txt &= inputs[i];
+    txt &= try!! splits[i];
+    if i < len(inputs) => txt &= try!! inputs[i];
   };
 
   return txt;
 }
 
 const main := fn => {
+  // Note that brackets can be escaped using `{{` and `}}` and that
+  // within the `{}` any valid calibre statement is allowed
   let mut formatted := "Hello, my name is {"Ada"} and I am {32}";
   print(formatted);
 
-  // A similar fmt method is included as part of the stdlib
+  // A similar `fmt` method is included as part of the stdlib
   formatted := fmt"Hello, my name is {"Ada"} and I am {32}";
   print(formatted);
 }

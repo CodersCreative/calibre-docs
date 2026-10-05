@@ -23,7 +23,7 @@ Closures are especially useful for short callback-style functions.
 ```cal
 const main := fn => {
   let bonus := 5;
-  let values := list:<int>[1, 2, 3].into_iter().map(fn (x : int) -> int => return x + bonus).collect();
+  let values := list:<int>[1, 2, 3] as! gen:<int>.map(fn (x : int) -> int => return x + bonus).collect();
 
   print(values);
 };

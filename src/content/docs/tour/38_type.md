@@ -22,16 +22,6 @@ type Country := struct (Language);
 type Box:<T> := struct { value : T };
 ```
 
-Calibre also allows built-in types to be named in `type` declarations when overloading or extending them.
-
-```cal
-type int := int @overload {
-  "+" := fn (left right : int) => return left - right
-};
-```
-
-Most of the time, though, `type` is simply how you define your own data shapes.
-
 Once a type has been declared, it can be constructed, destructured, matched against, and extended just like the built-in types used throughout the rest of the tour.
 
 Calibre also allows for builtin handling of type defaults using the `Default` trait and the built-in default syntax. These defaults are usually accessed using `Type.default()`
@@ -73,7 +63,7 @@ type Person := struct {
 
 By using the `@default` tag here, we're telling the compiler that it should generate an automatic definition for the `Default` trait where by default if we didn't assign a custom default value using `=` it will just use the type default, for example `age` here will be `0`.
 
-You can also define a custom default function using `impl Default for Type` and by leaving out the `@default` tag.
+You can also define a custom default functions by leaving out the `@default` tag and `impl` a `default` fn.
 
 ```cal
 const SURNAME := "Doe";
@@ -85,15 +75,14 @@ type Person := struct {
     country : Country,
 }
 
-impl Default for Person {
-  const default := fn -> Self => {
+impl Person {
+  const default := fn -> Self =>
     return Person {
       name : "John",
       surname : SURNAME,
       age : 0,
       country : Country.England : "London",
     };
-  };
 }
 ```
 

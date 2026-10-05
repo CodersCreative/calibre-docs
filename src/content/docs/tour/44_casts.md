@@ -41,11 +41,13 @@ This is often the most convenient way to say “convert this value, but fall bac
 
 ```cal
 let number := try "64" as int => 0;
+// For when you want a panic to occur
+let number := try!! "256" as int;
 ```
 
 Calibre also supports type checks with `is`.
 
-You will most often see `is` in pattern matching, especially with dynamic dispatch and more general match arms.
+You will most often see `is` in pattern matching.
 
 ```cal
 match value {

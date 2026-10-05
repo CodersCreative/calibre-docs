@@ -22,15 +22,16 @@ Lists can be indexed with `[]`.
 ```cal
 let numbers := [10, 20, 30];
 
-print(numbers[0]);
-print(numbers[1]);
+// Note that indexing returns an optional value
+print(numbers[0]); // Some : 10
+print(numbers[1]); // Some : 20
 ```
 
 The standard library provides many useful list methods.
 
 ```cal
 let mut numbers := list:<int>[1, 2, 3];
-numbers.push(4);
+numbers <<= 4;
 
 print(numbers.len());
 print(numbers.contains(2));

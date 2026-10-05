@@ -15,6 +15,7 @@ You can also import everything from a module.
 
 ```cal
 import * from data;
+// Note that most stdlib modules are imported by default like std::option or std::math
 import * from std::option;
 // The super keyword can be used to reference the parent module
 import * from super;

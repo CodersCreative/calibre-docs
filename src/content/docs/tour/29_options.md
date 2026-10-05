@@ -3,6 +3,8 @@ title: Options
 description: Representing presence or absence of a value.
 ---
 
+// TODO as and try forms
+
 Calibre uses option types for values that may or may not be present.
 
 An option type is written as `T?`.
@@ -52,7 +54,7 @@ let b := try some_option => fallback_value;
 Options also have standard helper methods.
 
 ```cal
-let maybe := some(9).map(fn (n : int) -> int => return n * 2).unwrap_or(0);
+let maybe := try some(9).map(fn (n : int) -> int => return n * 2) => 0;
 print(maybe);
 ```
 
@@ -60,17 +62,14 @@ Common helpers include:
 
 - `.is_some()`
 - `.is_none()`
-- `.unwrap()`
-- `.unwrap_or(...)`
 - `.map(...)`
 - `.and_then(...)`
 
 For example:
 
 ```cal
-let value := some(5)
-  .and_then(fn (x : int) -> int? => if x > 3 => return some(x * 3) else => return none)
-  .unwrap_or(0);
+let value := try some(5)
+  .and_then(fn (x : int) -> int? => if x > 3 => return some(x * 3) else => return none) => 0;
 ```
 
 Use options when a value may simply be missing and results when you need to explain why something failed.

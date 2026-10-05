@@ -3,6 +3,8 @@ title: Tags
 description: Using `@init` and `@fin`.
 ---
 
+// TODO Talk about all the types of tags
+
 Calibre has built-in ways to define multiple or different start functions for your programs.
 
 A special tag called `@init` can be used to define the order at which these functions start and which ones start automatically.

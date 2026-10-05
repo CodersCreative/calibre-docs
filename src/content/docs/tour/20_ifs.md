@@ -3,6 +3,8 @@ title: If and If Let
 description: Conditional logic.
 ---
 
+// TODO Ternary
+
 Use `if` when you want to run code only when a condition is true.
 
 ```cal

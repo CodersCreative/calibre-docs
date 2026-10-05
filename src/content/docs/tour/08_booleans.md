@@ -27,7 +27,6 @@ You can combine boolean expressions with `&&`, `||`, and `!`.
 let age := 20;
 let mut has_ticket := false;
 
-
 // true - `!` inverses the value of the bool
 has_ticket := !has_ticket 
 

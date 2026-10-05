@@ -3,6 +3,8 @@ title: Results
 description: Representing errors explicitly.
 ---
 
+// TODO as and try forms
+
 Calibre uses result types for error-aware computations.
 
 A result type is written as `Err!Ok`, where the left side is the error type and the right side is the ok type.
@@ -78,7 +80,6 @@ let parsed := parse_and_add("50", 7);
 
 print(parsed.is_ok());
 print(parsed.is_err());
-print(parsed.unwrap_or(0));
 ```
 
 You can transform results with methods like `.map(...)` and `.map_err(...)`.

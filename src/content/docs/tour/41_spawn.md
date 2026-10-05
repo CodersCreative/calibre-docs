@@ -56,7 +56,7 @@ spawn@ {
 
 Another variation is spawning inside a comprehension.
 
-This creates a list whose elements are produced by spawned work. Note that the list may not be ordered.
+This creates a list whose elements are produced by spawned work. Note that the list has no ordering guarantees.
 
 ```cal
 let width := 32;
@@ -72,7 +72,6 @@ Wait groups are the main synchronization primitive for spawned work. The stdlib 
 - `.join(...)`
 - `.wait()`
 - `.count()`
-- `.wait_until_zero()`
 
 In everyday code, raw_add and raw_done should not be used as its generally better standard to combine them together using `.join` or using by using a `spawn {...}` block.
 

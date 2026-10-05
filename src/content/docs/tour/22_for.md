@@ -104,7 +104,7 @@ You can destructure enum payloads directly in `for let`.
 ```cal
 type PairEnum := enum { Tuple : <int, int> };
 
-for let .Tuple : x, y <- PairEnum.Tuple : (7, 8) => {
+for let .Tuple : (x, y) <- PairEnum.Tuple : (7, 8) => {
   print(x + y);
   break;
 };
