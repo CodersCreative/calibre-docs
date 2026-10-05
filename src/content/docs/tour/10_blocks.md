@@ -5,12 +5,16 @@ description: Grouping code and controlling visibility.
 
 Blocks let you group multiple statements together inside `{` and `}` or  `{{` and `}}`. All blocks must start with `=>` however, even if they're standalone.
 
+## Basic Blocks
+
 ```cal
 const main := fn => {
   print("start");
   print("end");
 };
 ```
+
+## Scopes
 
 In the most common case, a block creates a new scope. Values declared inside that scope are only available inside it.
 
@@ -33,6 +37,8 @@ const main := fn => {
 };
 ```
 
+## Blocks as an Expression
+
 Blocks can also be used as expressions that produce a value.
 
 This is useful when you want temporary variables without leaking them into the outer scope.
@@ -44,6 +50,8 @@ let result := => {
   emit a + b;
 };
 ```
+
+## Non-Scoping Blocks
 
 Blocks can also be created that don't create a new scope by using `{{` and `}}` instead of `{` and `}`.
 
@@ -63,6 +71,8 @@ const main := fn => {
   print(outer);
 };
 ```
+
+## Defer
 
 Blocks can also be used in conjuction with `defer`.
 `defer` runs a statement whenever the block its defined in finishes.

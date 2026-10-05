@@ -7,6 +7,8 @@ description: Adding functionality to types.
 
 They are how Calibre gives a type methods and associated items.
 
+## Basic Usage
+
 This says that `get_language` belongs to `CountryBase`.
 
 ```cal
@@ -20,6 +22,8 @@ let country := CountryBase { language : Language.SPANISH };
 print(country.get_language());
 ```
 
+## Receiver Styles
+
 The first parameter usually acts like the receiver.
 
 Common receiver styles are:
@@ -31,6 +35,8 @@ Common receiver styles are:
 where `Type` can either be `Self` or the name of the type.
 By doing so you allow for the function to be treated as a static function.
 
+## Built-in Types
+
 This works for built-in types as well as user-defined ones.
 For example:
 
@@ -41,6 +47,8 @@ impl int {
 
 print(5.days());
 ```
+
+## Associated Items
 
 An `impl` block can also contain associated functions and constants, not just instance methods.
 
@@ -57,6 +65,8 @@ Associated items are accessed through the type itself.
 ```cal
 let country := CountryBase.english();
 ```
+
+## `Self` Type
 
 Inside an `impl` block, `Self` refers to the type currently being implemented.
 

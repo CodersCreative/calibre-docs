@@ -5,10 +5,14 @@ description: Truthy values.
 
 Calibre uses `bool` for values that are either true or false.
 
+## Boolean Values
+
 ```cal
 let open : bool = true;
 let locked := false;
 ```
+
+## Comparisons
 
 Booleans are commonly produced by comparisons.
 
@@ -21,6 +25,8 @@ print(a = b); // false
 print(a != b); // true
 ```
 
+## Boolean Operators
+
 You can combine boolean expressions with `&&`, `||`, and `!`.
 
 ```cal
@@ -28,7 +34,7 @@ let age := 20;
 let mut has_ticket := false;
 
 // true - `!` inverses the value of the bool
-has_ticket := !has_ticket 
+has_ticket := !has_ticket
 
 // true - `&&` represents `and` therefore is only true when both its inputs are true
 let can_enter := age >= 18 && has_ticket;
@@ -36,6 +42,8 @@ let can_enter := age >= 18 && has_ticket;
 // false - `||` represents `or` therefore is only true when one of its inputs are true
 let needs_help := !has_ticket || age < 18;
 ```
+
+## Using Booleans with If
 
 Booleans are often used with `if` expressions.
 

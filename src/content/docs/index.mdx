@@ -8,7 +8,7 @@ hero:
     file: ../../assets/calibreart_light.svg
   actions:
     - text: Try Calibre
-      link: /calibre-docs/tour/01/
+      link: /calibre-docs/tour/01_getting_started/
       icon: right-arrow
 ---
 
@@ -38,7 +38,7 @@ const main := fn => {
 		// Using an explicit send call
 		=> bmi_ch.send(bmi(52.5, 1.65)),
 		// Using the emit syntax
-		=> emit fac_ch factorial(5)
+		=> emit fac_ch <- factorial(5)
 	};
 	
 	print(try match bmi_ch.get() => 0f);
@@ -47,8 +47,10 @@ const main := fn => {
 	null;
 };
 
-const bmi := fn (mass height : float) -> float => mass / height ** 2;
-const factorial := fn (x : int) -> int => if x <= 1 => 1 else => x * factorial(x - 1);
+const bmi := fn (mass height : float) -> float => return mass / height ** 2;
+
+const factorial := fn (x : int) -> int => 
+	if x <= 1 => return 1 else => return x * factorial(x - 1);
 ```
 
 ## Why Calibre?

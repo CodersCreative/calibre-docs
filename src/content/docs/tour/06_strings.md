@@ -5,12 +5,16 @@ description: Text values.
 
 Calibre uses `str` for text.
 
+## String Literals
+
 String literals are written with double quotes.
 
 ```cal
 let greeting : str = "Hello";
 let message := "Welcome to Calibre";
 ```
+
+## String Concatenation
 
 You can join strings and other values with `&` (most primitive types would act as you expect).
 
@@ -22,6 +26,8 @@ print("Hello " & user);
 print("Age: " & age);
 ```
 
+## String Methods
+
 Strings come with useful standard library methods.
 
 ```cal
@@ -32,6 +38,8 @@ print(text.replace("b", "B"));
 print(text.starts_with("a"));
 ```
 
+## Working with Characters
+
 If you need to work with characters directly, you can index into a string or convert it to a `list:<char>`.
 
 ```cal
@@ -40,6 +48,8 @@ let chars : list:<char> = "hello" as! list:<char>;
 // The generator associated with str is gen:<char> not gen:<str> so this code is perfectly valid
 let chars : list:<char> = "hello" as! gen:<char>.collect();
 ```
+
+## Template Strings
 
 Calibre also supports template-style function calls for building strings.
 

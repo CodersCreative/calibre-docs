@@ -5,11 +5,15 @@ description: Named fields collected into a custom type.
 
 Structs let you create your own named data types with fields.
 
+## Defining Structs
+
 ```cal
 type Pair := struct { left right : int };
 ```
 
 Adjacent fields can share a type, so `left right : int` is shorthand for giving both fields the `int` type.
+
+## Creating Structs
 
 To create a value, use the struct name followed by a field list.
 
@@ -17,12 +21,16 @@ To create a value, use the struct name followed by a field list.
 let pair := Pair { left : 10, right : 20 };
 ```
 
+## Accessing Fields
+
 Struct fields are accessed with `.`.
 
 ```cal
 print(pair.left);
 print(pair.right);
 ```
+
+## Destructuring
 
 Structs can be destructured directly into local bindings.
 
@@ -45,6 +53,8 @@ const sum_pair_struct := fn ({left: a, right: b} : Pair) => return a + b;
 const sum_pair_struct_basic := fn ({left, right} : Pair) => return left + right;
 ```
 
+## Pattern Matching
+
 Structs can also be matched against directly.
 
 ```cal
@@ -54,6 +64,8 @@ match Pair { left : 30, right : 50 } {
   _ => {}
 };
 ```
+
+## Tuple-Style Structs
 
 Calibre also supports tuple-style structs.
 

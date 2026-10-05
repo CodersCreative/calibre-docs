@@ -7,6 +7,8 @@ Calibre supports foreign function interfaces through `extern`.
 
 This lets Calibre code call functions defined outside the language, such as C or Zig functions in shared libraries.
 
+## Basic FFI Declaration
+
 This declaration says:
 
 - the foreign ABI is `"c"`
@@ -19,11 +21,15 @@ This declaration says:
 extern "c" const c_abs := fn(@int) -> @int from "libc" as "abs";
 ```
 
+## Foreign ABIs
+
 Calibre supports different foreign ABIs, including at least `"c"` and `"zig"`.
 
 ```cal
 extern "zig" const zig_add := fn(@i32, @i32) -> @i32 from "./libzigffi.so" as "zig_add";
 ```
+
+## FFI Primitive Types
 
 Foreign function signatures often use FFI primitive types written with `@...`, such as:
 
@@ -44,6 +50,8 @@ extern "c" const c_strlen := fn(str) -> @usize from "libc" as "strlen";
 extern "c" const c_strerror := fn(@int) -> str from "libc" as "strerror";
 ```
 
+## Calling Foreign Functions
+
 You can call these declarations like normal Calibre functions and the values will be converted into the correct size as required.
 
 ```cal
@@ -54,6 +62,8 @@ let message := c_strerror(0);
 print(message);
 ```
 
+## Raw Pointers
+
 FFI also works with raw pointers.
 
 ```cal
@@ -61,6 +71,8 @@ extern "c" const c_memcmp := fn(ptr:<@u8>, ptr:<@u8>, @usize) -> int from "libc"
 ```
 
 This is common for C-style APIs that expect buffers and lengths.
+
+## Structs
 
 You can also pass structs across the FFI boundary when their layout is compatible with what the foreign side expects.
 

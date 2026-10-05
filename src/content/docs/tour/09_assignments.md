@@ -5,6 +5,8 @@ description: Variables, constants, and type annotations.
 
 Calibre gives you three common types of variables: immutable, mutable, and constant.
 
+## Immutable Variables
+
 Use `let` for an immutable variable.
 
 Immutable variables cannot be reassigned after they are created.
@@ -13,6 +15,8 @@ Immutable variables cannot be reassigned after they are created.
 let name := "Calibre";
 let age := 5;
 ```
+
+## Mutable Variables
 
 Use `let mut` when the value needs to change.
 
@@ -28,6 +32,8 @@ count += 1;
 let mut total := 10;
 total := total + 5;
 ```
+
+## Assignment as an Expression
 
 In Calibre, assignment is also an expression.
 
@@ -45,7 +51,11 @@ print(old);   // 10
 print(total); // 25
 ```
 
+## Constants
+
 Use `const` for variables that should stay constant, such as shared helpers or top-level definitions (only `const` declarations are allowed at the top-level).
+
+## Type Inference
 
 Calibre can often infer the type of a binding from the value on the right-hand side.
 
@@ -59,6 +69,8 @@ let score := 42;
 let title := "Tour";
 let ready := true;
 ```
+
+## Type Annotations
 
 When you want to be explicit, add a type annotation between the `:` and the `=`.
 

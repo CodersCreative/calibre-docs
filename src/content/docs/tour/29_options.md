@@ -3,8 +3,6 @@ title: Options
 description: Representing presence or absence of a value.
 ---
 
-// TODO as and try forms
-
 Calibre uses option types for values that may or may not be present.
 
 An option type is written as `T?`.

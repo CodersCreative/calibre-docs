@@ -12,6 +12,8 @@ The networking stdlib provides several related types:
 - `HttpClient`
 - `HttpResponse`
 
+## TCP
+
 `Tcp` provides lower-level TCP helpers.
 
 ```cal
@@ -33,6 +35,8 @@ stream.close();
 let listener := TcpListener.listen("127.0.0.1", 8080);
 let client := listener.accept();
 ```
+
+## HTTP
 
 For HTTP-style work, the stdlib provides `Http`, `HttpClient`, and `HttpResponse`.
 
@@ -63,6 +67,8 @@ print(response.body);
 - `port`
 - `headers`
 - `scheme`
+
+### HTTP Helpers
 
 Important HTTP helpers include:
 

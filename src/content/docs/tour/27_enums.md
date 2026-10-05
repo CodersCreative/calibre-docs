@@ -5,6 +5,8 @@ description: Values that can be one of several variants.
 
 Enums let a value be one of several named variants.
 
+## Defining Enums
+
 ```cal
 type Language := enum {
   FRENCH : FrenchData,
@@ -14,12 +16,16 @@ type Language := enum {
 };
 ```
 
+## Variant Payloads
+
 Each variant may carry different kinds of data:
 
 - no payload at all, like `SPANISH`
 - a single value, like `ENGLISH : int`
 - a struct payload, like `FRENCH : FrenchData`
 - a tuple payload, like `ARABIC : <Language, Language>`
+
+## Creating Enum Values
 
 You create enum values by naming the variant.
 
@@ -28,6 +34,8 @@ let english : Language = Language.ENGLISH : 6;
 let french := Language.FRENCH : FrenchData { data : 10, code : 5 };
 let spanish := Language.SPANISH;
 ```
+
+## Pattern Matching
 
 Enums are most powerful when combined with pattern matching.
 
@@ -38,6 +46,8 @@ match english {
   _ => print("other")
 };
 ```
+
+## Destructuring Payloads
 
 Payloads can be destructured directly in the match arm.
 

@@ -5,6 +5,8 @@ description: Pattern matching.
 
 `match` lets you compare a value against several patterns and run the first arm that fits.
 
+## Fn Match
+
 Calibre also has `fn match`, which is a convenient way to define a function whose body is entirely pattern matching.
 
 ```cal
@@ -30,7 +32,11 @@ const classify2 := fn match int -> str {
 };
 ```
 
+## Wildcard Pattern
+
 Each arm can match a different pattern shape, and `_` is the fallback wildcard.
+
+## Literal Patterns
 
 You can match simple literal values directly.
 
@@ -42,6 +48,8 @@ match 50 {
 };
 ```
 
+## Multiple Alternatives
+
 Multiple alternatives can be combined with `|`.
 
 ```cal
@@ -50,6 +58,8 @@ match 30 {
   _ => print("other")
 };
 ```
+
+## Range Patterns
 
 Ranges can be matched with `in`.
 
@@ -60,6 +70,8 @@ let classify := fn match int -> str {
 };
 ```
 
+## List Membership Patterns
+
 You can also match membership in a literal list.
 
 ```cal
@@ -68,6 +80,8 @@ let classified := match 30 {
   _ => emit "other"
 };
 ```
+
+## Type and Binding Patterns
 
 `@` bindings let you capture part of what matched and `is` arms match based on type.
 
@@ -80,6 +94,8 @@ let classify := fn match int -> str {
 };
 ```
 
+## Guards
+
 The `if` part of an arm is a guard. A guard adds an extra boolean condition after the pattern itself has already matched.
 
 ```cal
@@ -89,6 +105,8 @@ let classify := fn match int -> str {
   _ => return "other"
 };
 ```
+
+## Let Patterns
 
 `let` arms bind whatever value matched to a name.
 
@@ -101,6 +119,8 @@ match 50 {
   _ => {}
 };
 ```
+
+## Tuple Patterns
 
 Tuples can be matched position by position.
 
@@ -115,6 +135,8 @@ match (10, 90, 20) {
 };
 ```
 
+## Ignore Patterns
+
 The `..` pattern can ignore large parts of a tuple or list unlike `_` which only ignores a single value.
 
 ```cal
@@ -123,6 +145,8 @@ match (10, 90, 20) {
   _ => {}
 };
 ```
+
+## Struct Patterns
 
 Structs can be destructured directly in a match arm.
 
@@ -136,6 +160,8 @@ match Pair { left : 30, right : 50 } {
 };
 ```
 
+## Enum Patterns
+
 Enums can be matched by variant, and their payloads can be destructured at the same time.
 
 ```cal
@@ -147,6 +173,8 @@ match PairEnum.Tuple : (10, 30) {
   _ => {}
 };
 ```
+
+## List Patterns
 
 Lists can be matched by exact shape or by prefix.
 
@@ -160,6 +188,8 @@ let classify_list := fn match list:<int> -> str {
 };
 ```
 
+## String Patterns
+
 Strings can also be matched against to test against how a string input starts and ends easily.
 
 ```cal
@@ -169,6 +199,8 @@ let parse_command := fn match str -> str {
   _ => return "unknown"
 };
 ```
+
+## Match Without Value
 
 `match` can also be used without an explicit value, where each arm acts like a checked condition.
 

@@ -3,8 +3,6 @@ title: If and If Let
 description: Conditional logic.
 ---
 
-// TODO Ternary
-
 Use `if` when you want to run code only when a condition is true.
 
 ```cal
@@ -90,3 +88,24 @@ if let token @ "go:" & payload <- "go:east" => {
 Use `if` for ordinary boolean conditions, and `if let` when the question is really “does this value match this shape?”.
 
 Also note that `if let` supports every pattern supported by `match` statements and `for let` and vice-versa.
+
+## Ternary Operators
+
+For short conditional expressions, Calibre provides ternary operators. These are covered in detail in the Builtin Operators section, but here's a quick overview:
+
+```cal
+let label := "yes" if 10 > 5 else "no";
+```
+
+Calibre supports three types of ternary operators:
+- Normal ternary: `value if condition else fallback`
+- Option ternary: `value if? condition` (returns `some(value)` or `none`)
+- Result ternary: `value if! condition else fallback` (returns `ok(value)` or `err(fallback)`)
+
+Ternary operators can also be used on the left-hand side of assignments for conditional assignment:
+
+```cal
+let mut left := 0;
+let mut right := 0;
+left if true else right := 10;
+```

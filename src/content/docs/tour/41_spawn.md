@@ -3,7 +3,9 @@ title: Spawn and WaitGroups
 description: Running work concurrently.
 ---
 
-Calibre provides `spawn` for running work concurrently. 
+Calibre provides `spawn` for running work concurrently.
+
+## Basic Spawn
 
 The simplest form spawns a block of work.
 
@@ -20,6 +22,8 @@ The returned value is typically a `WaitGroup`, which can be used to wait until a
 wg.wait();
 ```
 
+## Defer with Spawn
+
 You will often see this written together with `defer` or `defer return`.
 
 ```cal
@@ -29,6 +33,8 @@ let wg := spawn for i in 0..10 => {
 
 defer wg.wait();
 ```
+
+## Spawn For
 
 `spawn for` is a very common variation. It starts one concurrent task for each iteration of a loop.
 
@@ -40,6 +46,8 @@ let wg := spawn for i in 0..worker_count => {
   print("spawned worker " & i);
 };
 ```
+
+## Spawn At
 
 Calibre also supports `spawn@`, which is useful for when you want the worker to be waited immediately. Note that `spawn@` can be used anywhere `spawn` is applicable.
 
@@ -54,6 +62,8 @@ spawn@ {
 };
 ```
 
+## Spawn in Comprehensions
+
 Another variation is spawning inside a comprehension.
 
 This creates a list whose elements are produced by spawned work. Note that the list has no ordering guarantees.
@@ -63,6 +73,8 @@ let width := 32;
 
 let concurrent := [i spawn for i in 0..=width];
 ```
+
+## Wait Groups
 
 Wait groups are the main synchronization primitive for spawned work. The stdlib `WaitGroup` type provides:
 

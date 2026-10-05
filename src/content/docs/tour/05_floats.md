@@ -5,11 +5,15 @@ description: Decimal numbers.
 
 Calibre uses `float` or `big` for decimal numbers.
 
+## Basic Usage
+
 ```cal
 let x : float = 3.14;
 let y := 2.5;
 let z : big = 2.5g;
 ```
+
+## Explicit Literals
 
 You can also write an explicit float literal with the `f` suffix or an explicit big float with the `g` suffix.
 
@@ -25,6 +29,8 @@ Floats and Bigs are useful when you need fractions, measurements, or calculation
 const bmi := fn (mass height : float) -> float => return mass / height ** 2;
 ```
 
+## Powers of Ten
+
 Like integers, floats and bigs can use `e` for powers of ten.
 
 ```cal
@@ -32,6 +38,8 @@ let small := 1.5e-2;
 let large := 2e6f;
 let xlarge := 2e46g;
 ```
+
+## Arithmetic Operators
 
 Float values work with the usual arithmetic operators.
 
@@ -54,5 +62,7 @@ const main = fn => {
   print(c / d);
 };
 ```
+
+## Helper Functions
 
 The standard library also provides helper functions on `float` and `big`, such as `float.sqrt(9f)`, `(3.5).round()`, and `float.sin(PI / 4f)`.

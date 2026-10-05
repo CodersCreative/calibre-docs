@@ -5,11 +5,15 @@ description: Looping with values and patterns.
 
 Calibre uses `for` for several looping styles.
 
+## Range Loops
+
 The most common form loops over a range or iterable value.
 
 ```cal
 for i in 1..=10 => print(i);
 ```
+
+## List Loops
 
 You can also loop over lists directly.
 
@@ -17,6 +21,8 @@ You can also loop over lists directly.
 let numbers := list:<int>[10, 20, 30];
 for n in numbers => print(n);
 ```
+
+## Mutable Reference Loops
 
 If you need to mutate each item through a reference, you can loop over a mutable reference to the collection.
 
@@ -27,6 +33,8 @@ for n in lst.&mut => {
   n.* *= 2;
 };
 ```
+
+## While Loops
 
 `for` can also act like a while-style loop by using a boolean condition instead of `in`.
 
@@ -39,6 +47,8 @@ for countdown > 0 => {
 };
 ```
 
+## Infinite Loops
+
 An empty condition creates an infinite loop.
 
 ```cal
@@ -47,6 +57,17 @@ for => {
   break;
 };
 ```
+
+However you can also use `for true` to get a similar effect.
+
+```cal
+for true => {
+  print("looping");
+  break;
+};
+```
+
+## Loop Control
 
 In Calibre `for` loops supports `break`, `continue`, and `until`.
 
@@ -57,6 +78,8 @@ for i in 0..10 => {
   print(i);
 } until i > 4;
 ```
+
+## For as an Expression
 
 `for` can also be treated as an expression that produces a value.
 
@@ -87,6 +110,8 @@ print(result);
 ```
 
 This makes `for` useful not just for repetition, but also for search-like logic where you want the loop itself to compute a final result.
+
+## For Let
 
 `for let` combines looping with pattern matching. The loop body only runs when the current value matches the pattern.
 
